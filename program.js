@@ -1,3 +1,19 @@
+const keyboard = document.querySelector("#keyboard")
+const keys = [7, 8, 9, "+",
+                4, 5, 6, "-",
+                1, 2 , 3, "×",
+                "C", 0, ",", "÷",
+                "="];
+
+keys.forEach((key) => {
+    const button = document.createElement("button")
+    button.textContent = key
+    button.setAttribute("class", "key")
+    if (typeof key == "number") button.classList += " number";
+    button.setAttribute("id", `${key}`);
+    keyboard.appendChild(button);
+})
+
 function add(operand1, operand2) {
     return operand1 + operand2
 }
