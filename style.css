@@ -1,3 +1,25 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 30px;
+    margin-top: 10px;
+    width: 295px;
+    height: 70px;
+    background-color: lawngreen;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
 #keyboard {
     display: flex;
     width: 295px;
