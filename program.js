@@ -18,6 +18,7 @@ keys.forEach((key) => {
     if (typeof key == "number") button.classList += " number";
     button.setAttribute("id", `${key}`);
     button.addEventListener("click", function (e) {
+        if (display.textContent === "Syntax ERROR") display.textContent= "";
         if (this.className.includes("number") && operand2.length < 18) {
             if (operand2 === "") display.textContent = "";
             operand2 += this.id
