@@ -80,8 +80,14 @@ function divide(operand1, operand2) {
 }
 
 function operate(operand1, operand2, operator) {
-    if (operator === '+') return add(operand1, operand2)
-    if (operator === '-') return substract(operand1, operand2)
-    if (operator === '×') return multiply(operand1, operand2)
-    if (operator === '÷') return divide(operand1, operand2)
+    let result = null;
+    if (operator === '+') result = add(operand1, operand2)
+    if (operator === '-') result = substract(operand1, operand2)
+    if (operator === '×') result = multiply(operand1, operand2)
+    if (operator === '÷') result = divide(operand1, operand2)
+    let overflow = `${result}`.length - 18
+    if (overflow > 0) {
+        result = Math.round((result) * (18 - overflow)) / (18 - overflow)
+    }
+    return result;
 }
