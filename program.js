@@ -21,6 +21,7 @@ keys.forEach((key) => {
         if (display.textContent === "Syntax ERROR") display.textContent= "";
         if (this.className.includes("number") && operand2.length < 18) {
             if (operand2 === "") display.textContent = "";
+            if (operator === "") operand1 = "";
             operand2 += this.id
             display.textContent += this.id
         } else if (operators.includes(this.id)) {
@@ -42,7 +43,7 @@ keys.forEach((key) => {
                 let result = operate(operand1, operand2, operator)
                 if (!Number.isNaN(result) && Number.isFinite(result)) {
                 operand1 = `${result}`
-                operand2 = ""
+                operand2 = operator = ""
                 display.textContent = operand1
                 } else display.textContent = "Syntax ERROR"
             }
