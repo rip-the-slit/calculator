@@ -29,17 +29,21 @@ keys.forEach((key) => {
                 operand2 = ""
             } else if (operand2 != "") {
                 let result = operate(operand1, operand2, operator)
-                operand1 = `${result}`
-                operand2 = ""
+                if (!Number.isNaN(result) && Number.isFinite(result)) {
+                    operand1 = `${result}`
+                    operand2 = ""
+                    display.textContent = operand1
+                } else display.textContent = "Syntax ERROR"
                 operator = this.id
-                display.textContent = operand1
             } else operator = this.id
         } else if (this.id == "=") {
             if (!(operand1 === "") && !(operand2 === "")) {
                 let result = operate(operand1, operand2, operator)
+                if (!Number.isNaN(result) && Number.isFinite(result)) {
                 operand1 = `${result}`
                 operand2 = ""
                 display.textContent = operand1
+                } else display.textContent = "Syntax ERROR"
             }
         } else if (this.id == "C") {
             operand1 = operand2 = operator = ""
@@ -71,7 +75,6 @@ function multiply(operand1, operand2) {
 }
 
 function divide(operand1, operand2) {
-    if (+operand2 == 0) return "Syntax ERROR"
     return operand1 / operand2
 }
 
