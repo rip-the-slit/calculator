@@ -3,3 +3,4 @@ Minimal calculator made with Javascript and CSS as part of The Odin Project curr
 ## Finished look:
 ------
 ![](screenshot.png)
+![](demo.gif)
